@@ -1,8 +1,8 @@
 # **YOGA-14S-2021-hackintosh** 
-
 Lenovo YOGA 14S 2021 ITL hackintosh
 
 <img src="https://raw.githubusercontent.com/regspy/YOGA-14S-2021-hackintosh/main/img/macos.jpg" width="100%">
+
 
 
 ##本机配置
