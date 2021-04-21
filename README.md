@@ -5,6 +5,7 @@ Lenovo YOGA 14S 2021 ITL hackintosh
 
 
 ##本机配置
+
 <img src="https://webdoc.lenovo.com.cn/think/driver/2021-04-08/20210408110585101345585465.png" width="15%">  Lenovo YOGA 14S 2021 ITL
 
 | 硬件   | 详细信息   | 当前状态  |
