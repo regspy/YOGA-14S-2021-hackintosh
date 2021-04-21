@@ -1,0 +1,10 @@
+sudo dmesg |grep snd_hda_codec_realtek
+[    6.285736] snd_hda_codec_realtek ehdaudio0D0: autoconfig for ALC287: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:speaker
+[    6.285737] snd_hda_codec_realtek ehdaudio0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[    6.285737] snd_hda_codec_realtek ehdaudio0D0:    hp_outs=1 (0x21/0x0/0x0/0x0/0x0)
+[    6.285738] snd_hda_codec_realtek ehdaudio0D0:    mono: mono_out=0x0
+[    6.285738] snd_hda_codec_realtek ehdaudio0D0:    inputs:
+[    6.285739] snd_hda_codec_realtek ehdaudio0D0:      Mic=0x19
+[    6.334226] snd_hda_codec_realtek ehdaudio0D0: ASoC: sink widget AIF1TX overwritten
+[    6.334228] snd_hda_codec_realtek ehdaudio0D0: ASoC: source widget AIF1RX overwritten
+

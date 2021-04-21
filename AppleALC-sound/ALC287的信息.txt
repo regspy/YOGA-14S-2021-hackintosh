@@ -1,0 +1,67 @@
+ALC287
+
+0x14 Speaker out
+0x21  Hp out
+0x19 Headset Mic in
+
+----
+Mic at Ext Left             25 0x19       Internal Mic in      路径  0x19  0x22  0x9
+Speaker at Int N/A          20 0x14 	Speaker out          路径  0x14 0x02
+HP Out at Ext Left          33 0x21	HP out                路径  0x21   0x03
+
+---
+Getdump 路径  数据整理
+Headphones   33   3
+Speaker    20  2
+Digital-out(HDMI)  4   3
+
+----
+
+
+
+
+
+
+
+键盘和触摸板 keyboard and touchpad not working
+
+触摸板在20.10可正常使用，而键盘则需要修改grub的命令：
+
+/etc/default/grub中修改GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i8042.nopnp i8042.nomux=1 i8042.reset"
+
+即添加i8042.nopnp i8042.nomux=1 i8042.reset三个参数，参数含义在kernel parameters查看。
+
+修改live启动盘的grub参数，在live中也能正常使用键盘，而触摸板则需要5.7以上的kernel。
+
+
+
+
+sudo dmesg |grep speaker
+[  188.817283] snd_hda_codec_realtek ehdaudio0D0: autoconfig for ALC287: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:speaker
+[  188.817284] snd_hda_codec_realtek ehdaudio0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+
+
+sudo dmesg |grep snd_hda_codec_realtek
+
+sudo dmesg |grep snd_hda_codec_realtek
+[  188.817283] snd_hda_codec_realtek ehdaudio0D0: autoconfig for ALC287: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:speaker
+[  188.817284] snd_hda_codec_realtek ehdaudio0D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[  188.817285] snd_hda_codec_realtek ehdaudio0D0:    hp_outs=1 (0x21/0x0/0x0/0x0/0x0)
+[  188.817285] snd_hda_codec_realtek ehdaudio0D0:    mono: mono_out=0x0
+[  188.817286] snd_hda_codec_realtek ehdaudio0D0:    inputs:
+[  188.817286] snd_hda_codec_realtek ehdaudio0D0:      Mic=0x19
+[  188.874012] snd_hda_codec_realtek ehdaudio0D0: ASoC: sink widget AIF1TX overwritten
+[  188.874015] snd_hda_codec_realtek ehdaudio0D0: ASoC: source widget AIF1RX overwritten
+
+
+sudo dmesg |grep snd_hda_intel
+[  187.990362] snd_hda_intel 0000:00:1f.3: DSP detected with PCI class/subclass/prog-if info 0x040100
+[  187.990365] snd_hda_intel 0000:00:1f.3: Digital mics found on Skylake+ platform, using SOF driver
+
+
+[  188.893085] input: sof-hda-dsp Mic as /devices/pci0000:00/0000:00:1f.3/skl_hda_dsp_generic/sound/card0/input53
+[  188.893128] input: sof-hda-dsp Headphone as /devices/pci0000:00/0000:00:1f.3/skl_hda_dsp_generic/sound/card0/input54
+[  188.893163] input: sof-hda-dsp HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:1f.3/skl_hda_dsp_generic/sound/card0/input55
+[  188.893222] input: sof-hda-dsp HDMI/DP,pcm=4 as /devices/pci0000:00/0000:00:1f.3/skl_hda_dsp_generic/sound/card0/input56
+[  188.893257] input: sof-hda-dsp HDMI/DP,pcm=5 as /devices/pci0000:00/0000:00:1f.3/skl_hda_dsp_generic/sound/card0/input57
+
