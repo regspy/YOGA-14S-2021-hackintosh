@@ -13,7 +13,7 @@ Lenovo YOGA 14S 2021 ITL hackintosh
 | 型号   | Lenovo YOGA 14S 2021 ITL |  笔记本  |
 | CPU   | 11th Gen intel Core I5-1135G7| PR00已修正   |
 | 内存   | Micron 16G LPDDR4 4266MHZ  |  板载  |
-| 硬盘   | TOSHIBA KXG60PNV2T04 22048GB | 已更换   |
+| 硬盘   | TOSHIBA KXG60PNV2T04 2048GB | 已更换   |
 | 声卡   | Realtek ALC 287   |  voodooHDA驱动   |
 | 网卡   | INTEL AX201   |   itlwm驱动  |
 | 显卡   | Intel Iris XE Graphics   |  未驱动  |
